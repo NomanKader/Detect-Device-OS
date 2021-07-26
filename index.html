@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detect Device</title>
+  </head>
+  <body>
+    <button onclick="detect_os()" style="background-color: teal;color: white;">Detect My Device</button>
+    <p id="my_os"></p>
+    <footer style="position: absolute;bottom: 0;">
+      Knowledge Sharing By : <a href="https://www.nksoftwarehouse.com">NK Software House</a><br>
+      Kindly visit our <a href="https://www.facebook.com/nksoftwareshouse">Facebook Page</a>
+    </footer>
+    <script>
+      function detect_os() {
+        var userAgent = window.navigator.userAgent,
+          platform = window.navigator.platform,
+          macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+          windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+          iosPlatforms = ["iPhone", "iPad", "iPod"],
+          os = null;
+
+        if (macosPlatforms.indexOf(platform) !== -1) {
+          os = "Mac OS";
+          document.getElementById("my_os").innerHTML = "Your are using "+os+" Operating System";
+        } else if (iosPlatforms.indexOf(platform) !== -1) {
+          os = "iOS";
+          document.getElementById("my_os").innerHTML = "Your are using "+os+" Operating System";
+        } else if (windowsPlatforms.indexOf(platform) !== -1) {
+          os = "Windows";
+          document.getElementById("my_os").innerHTML = "Your are using "+os+" Operating System";
+        } else if (/Android/.test(userAgent)) {
+          os = "Android";
+          document.getElementById("my_os").innerHTML = "Your are using "+os+" Operating System";
+        } else if (!os && /Linux/.test(platform)) {
+          os = "Linux";
+          document.getElementById("my_os").innerHTML = "Your are using "+os+" Operating System";
+        }
+      }
+    </script>
+  </body>
+</html>

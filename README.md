@@ -1,4 +1,4 @@
-# Detect-Device-OS
+# Detect-User-Device
 This easy repo will show you to get the user device operating system using javascript. 
 <h2>Hope ! this repo will help in your code☺</h2>
 <h2><a href="https://nksoftwarehouse.com/detect_device_os.html"><i>Live Demo</i></a></h2>
